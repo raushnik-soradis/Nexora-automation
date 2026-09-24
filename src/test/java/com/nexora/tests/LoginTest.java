@@ -36,10 +36,16 @@ public class LoginTest extends BaseTest {
         addCustomerPage.enterPhone("7321802490");
         addCustomerPage.enterEmail("raushnitrigun@gmail.com");
         addCustomerPage.enterOtp("123456");
-        addCustomerPage.enterPassword("SecurePassword123");
+        addCustomerPage.clickVerifyAndContinue();
         addCustomerPage.enterPassword("SecurePassword123");
         addCustomerPage.enterConfirmPassword("SecurePassword123");
-        addCustomerPage.clickVerifyAndContinue();
+        System.out.println("About to click Next...");
+        addCustomerPage.clickNext();
+        //System.out.println("Test completed after clicking Next");
+        addCustomerPage.verifyNextPage();
+        addCustomerPage.clickSecondNext();
+        addCustomerPage.verifyFinalPage();
+        addCustomerPage.clickLastButton();
     }
 
 }

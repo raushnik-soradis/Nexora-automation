@@ -18,10 +18,10 @@ public class CustomerPage {
                 .first();
 
         System.out.println("Customer Page Title: " + page.title());
-        System.out.println("Customer Page URL: " + page.url());
+       // System.out.println("Customer Page URL: " + page.url());
         // System.out.println("Customer Management header visible: " + customerHeader.isVisible());
         // System.out.println("Page contains 'customer': " + pageText.toLowerCase().contains("customer"));
-        System.out.println("URL contains /customer: " + page.url().contains("/customer"));
+        //System.out.println("URL contains /customer: " + page.url().contains("/customer"));
 
         assertThat(page).hasURL("https://admin.nexorabysoradis.com/customer");
 
