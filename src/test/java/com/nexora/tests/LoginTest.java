@@ -1,8 +1,5 @@
 package com.nexora.tests;
-import com.nexora.pages.AddCustomerPage;
-import com.nexora.pages.CustomerPage;
-import com.nexora.pages.DashboardPage;
-import com.nexora.pages.LoginPage;
+import com.nexora.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.nexora.pages.utils.ConfigReader;
@@ -46,6 +43,7 @@ public class LoginTest extends BaseTest {
         addCustomerPage.clickSecondNext();
         addCustomerPage.verifyFinalPage();
         addCustomerPage.clickLastButton();
+
     }
 
 }
