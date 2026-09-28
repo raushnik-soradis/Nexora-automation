@@ -20,11 +20,10 @@ public class LoginTest extends BaseTest {
         Assert.assertNotNull(dashboardPage);
         dashboardPage.verifyDashboardPage();
         CustomerPage customerPage = dashboardPage.goToCustomerPage();
-
         customerPage.verifyCustomerPage();
 
-        AddCustomerPage addCustomerPage = customerPage.clickAddCustomer();
 
+        AddCustomerPage addCustomerPage = customerPage.clickAddCustomer();
         addCustomerPage.verifyAddCustomerPage();
         addCustomerPage.enterCompanyName("Playwright Test Company");
         addCustomerPage.enterIndustry("Logistics");
@@ -38,7 +37,6 @@ public class LoginTest extends BaseTest {
         addCustomerPage.enterConfirmPassword("SecurePassword123");
         System.out.println("About to click Next...");
         addCustomerPage.clickNext();
-        //System.out.println("Test completed after clicking Next");
         addCustomerPage.verifyNextPage();
         addCustomerPage.clickSecondNext();
         addCustomerPage.verifyFinalPage();

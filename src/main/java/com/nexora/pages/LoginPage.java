@@ -17,8 +17,8 @@ public class LoginPage {
    public DashboardPage loginToApplication(String username, String password)
    {
      // page.navigate(base_url);
-      System.out.println(page.title());
-       System.out.println("Before login URL: " + page.url());
+    //  System.out.println(page.title());
+      // System.out.println("Before login URL: " + page.url());
        // Fills the username in <input name="user"> field
        page.locator("input[name='user']").fill(username);
 
@@ -33,12 +33,12 @@ public class LoginPage {
 
        page.waitForLoadState();
 
-       System.out.println("After login URL: " + page.url());
-       System.out.println("After login title: " + page.title());
-       System.out.println("After login text:");
-       System.out.println("Email suggestions:");
+       //System.out.println("After login URL: " + page.url());
+       //System.out.println("After login title: " + page.title());
+       //System.out.println("After login text:");
+       //System.out.println("Email suggestions:");
 
-       System.out.println(page.locator("body").innerText());
+      // System.out.println(page.locator("body").innerText());
        //DashboardPage dashboardPage = new DashboardPage(page);
        return new DashboardPage(page);
    }

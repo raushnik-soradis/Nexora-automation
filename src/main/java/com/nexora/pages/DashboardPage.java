@@ -15,7 +15,7 @@ public class DashboardPage {
     }
 
     public void verifyDashboardPage() {
-        System.out.println("Dashboard Title: " + page.title());
+        //System.out.println("Dashboard Title: " + page.title());
         assertThat(page).hasTitle("Nexora");
     }
 
@@ -27,10 +27,10 @@ public class DashboardPage {
                .first();
 
         System.out.println("Customer locator count: " + customerLink.count());
-        System.out.println("Customer href: " + customerLink.getAttribute("href"));
-        System.out.println("Customer aria-label: " + customerLink.getAttribute("aria-label"));
-        System.out.println("Customer is visible: " + customerLink.isVisible());
-        System.out.println("Customer is enabled: " + customerLink.isEnabled());
+        //System.out.println("Customer href: " + customerLink.getAttribute("href"));
+        //System.out.println("Customer aria-label: " + customerLink.getAttribute("aria-label"));
+        //System.out.println("Customer is visible: " + customerLink.isVisible());
+        //System.out.println("Customer is enabled: " + customerLink.isEnabled());
 
         if (customerLink.count() == 0) {
             throw new IllegalStateException("Customer menu item not found on dashboard");
@@ -43,9 +43,9 @@ public class DashboardPage {
         page.waitForLoadState();
         page.waitForTimeout(1000);
 
-        System.out.println("Before click URL: " + beforeUrl);
-        System.out.println("After click URL: " + page.url());
-        System.out.println("URL changed after click: " + !page.url().equals(beforeUrl));
+        //System.out.println("Before click URL: " + beforeUrl);
+        //System.out.println("After click URL: " + page.url());
+        //System.out.println("URL changed after click: " + !page.url().equals(beforeUrl));
 
         return new CustomerPage(page);
     }

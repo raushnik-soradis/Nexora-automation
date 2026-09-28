@@ -20,12 +20,10 @@ public class EditCustomerTest  extends BaseTest{
         );
 
         Assert.assertNotNull(dashboardPage);
-
         dashboardPage.verifyDashboardPage();
-
         CustomerPage customerPage = dashboardPage.goToCustomerPage();
-
         customerPage.verifyCustomerPage();
+        customerPage.searchCustomer("Playwright Test Company");
 
         EditCustomer editCustomerPage = new EditCustomer(page);
         editCustomerPage.verifyCompanyName("Playwright Test Company");
@@ -36,6 +34,8 @@ public class EditCustomerTest  extends BaseTest{
         editCustomerPage.verifyNextbtnPage();
         editCustomerPage.clickSecondNextbtn();
         editCustomerPage.clickUpdateCustomer();
+
+
     }
 
 }
