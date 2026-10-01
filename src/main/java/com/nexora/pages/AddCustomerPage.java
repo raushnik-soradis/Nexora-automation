@@ -8,9 +8,10 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 
 public class AddCustomerPage {
 
-    Page page;
+     Page page;
 
     public AddCustomerPage(Page page) {
+
         this.page = page;
     }
 
@@ -20,6 +21,7 @@ public class AddCustomerPage {
     }
 
     public void enterCompanyName(String companyName) {
+
         page.locator("input[name='companyName']").fill(companyName);
     }
 
