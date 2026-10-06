@@ -12,15 +12,8 @@ public class EditCustomerTest  extends BaseTest{
     @Test
     public void testEditCustomerGST() {
 
-        LoginPage loginPage = new LoginPage(page);
+        login();
 
-        DashboardPage dashboardPage = loginPage.loginToApplication(
-                ConfigReader.getProperty("username"),
-                ConfigReader.getProperty("password")
-        );
-
-        Assert.assertNotNull(dashboardPage);
-        dashboardPage.verifyDashboardPage();
         CustomerPage customerPage = dashboardPage.goToCustomerPage();
         customerPage.verifyCustomerPage();
         customerPage.searchCustomer("Playwright Test Company");

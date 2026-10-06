@@ -14,16 +14,14 @@ public class VehicleTest extends BaseTest {
         // Login
         LoginPage loginPage = new LoginPage(page);
 
-        loginPage.loginToApplication(
-                ConfigReader.getProperty("username"),
-                ConfigReader.getProperty("password")
-        );
+        login();
         handleCheckInSkip();
 
         // Dashboard
         DashboardPage dashboardPage = new DashboardPage(page);
         VehiclePage vehiclePage = dashboardPage.goToVehiclePage();
         vehiclePage.verifyVehiclePage();
+
 
 
         // Navigate to Vehicles

@@ -13,14 +13,8 @@ import org.testng.annotations.Test;
         @Test
         public void testBulkEntry() {
 
-            LoginPage loginPage = new LoginPage(page);
+            login();
 
-            DashboardPage dashboardPage = loginPage.loginToApplication(
-                    ConfigReader.getProperty("username"),
-                    ConfigReader.getProperty("password")
-            );
-            Assert.assertNotNull(dashboardPage);
-            dashboardPage.verifyDashboardPage();
             CustomerPage customerPage = dashboardPage.goToCustomerPage();
             customerPage.verifyCustomerPage();
             BulkEntryPage bulkEntryPage = customerPage.clickBulkEntry();

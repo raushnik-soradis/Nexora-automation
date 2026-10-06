@@ -10,15 +10,8 @@ public class LoginTest extends BaseTest {
     public void testLogin() {
 
         // Initialize LoginPage using the page instance provided by BaseTest
-        LoginPage loginPage = new LoginPage(page);
-
-        // Perform login using credentials from config.properties
-        DashboardPage dashboardPage = loginPage.loginToApplication(
-                ConfigReader.getProperty("username"),
-                ConfigReader.getProperty("password")
-        );
+       login();
         Assert.assertNotNull(dashboardPage);
-        dashboardPage.verifyDashboardPage();
         CustomerPage customerPage = dashboardPage.goToCustomerPage();
         customerPage.verifyCustomerPage();
 

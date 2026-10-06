@@ -10,12 +10,7 @@ public class CheckInTest extends BaseTest {
         @Test
         public void verifyCheckInPopup() {
 
-            LoginPage loginPage = new LoginPage(page);
-
-            loginPage.loginToApplication(
-                    ConfigReader.getProperty("username"),
-                    ConfigReader.getProperty("password")
-            );
+            login();
 
             CheckInPage checkInPage = new CheckInPage(page);
 
@@ -25,33 +20,11 @@ public class CheckInTest extends BaseTest {
                 checkInPage.clickSkip();
             }
         }
-//        @Test
-//    public void verifyCheckIn() {
-//
-//        LoginPage loginPage = new LoginPage(page);
-//
-//        loginPage.loginToApplication(
-//                ConfigReader.getProperty("username"),
-//                ConfigReader.getProperty("password")
-//        );
-//
-//        CheckInPage checkInPage = new CheckInPage(page);
-//
-//        if (checkInPage.isCheckInDisplayed()) {
-//
-//            checkInPage.verifyCheckInButton();
-//            checkInPage.clickCheckIn();
-//        }
-//    }
+
 @Test
 public void verifyCheckIn() {
 
-    LoginPage loginPage = new LoginPage(page);
-
-    loginPage.loginToApplication(
-            ConfigReader.getProperty("username"),
-            ConfigReader.getProperty("password")
-    );
+    login();
 
     CheckInPage checkInPage = new CheckInPage(page);
 

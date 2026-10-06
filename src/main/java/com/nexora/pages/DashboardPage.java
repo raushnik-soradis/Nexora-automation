@@ -60,5 +60,32 @@
             assertThat(page).hasURL(
                     "https://admin.nexorabysoradis.com/vehicles"
             );
+
+            }
+        public ManifestPage goToManifestPage() {
+
+            Locator manifestMenu = page.getByText(
+                    "Manifest",
+                    new Page.GetByTextOptions().setExact(true)
+            );
+
+            assertThat(manifestMenu).isVisible();
+
+            manifestMenu.click();
+
+            return new ManifestPage(page);
+        }
+        public CatalogPage goToCatalogPage() {
+
+            Locator catalogMenu = page.getByText(
+                    "Catalogs",
+                    new Page.GetByTextOptions().setExact(true)
+            );
+
+            assertThat(catalogMenu).isVisible();
+
+            catalogMenu.click();
+
+            return new CatalogPage(page);
         }
     }

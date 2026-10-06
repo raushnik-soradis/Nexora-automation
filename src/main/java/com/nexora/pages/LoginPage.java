@@ -16,10 +16,7 @@ public class LoginPage {
     }
    public DashboardPage loginToApplication(String username, String password)
    {
-     // page.navigate(base_url);
-    //  System.out.println(page.title());
-      // System.out.println("Before login URL: " + page.url());
-       // Fills the username in <input name="user"> field
+
        page.locator("input[name='user']").fill(username);
 
        // Select Gmail domain
