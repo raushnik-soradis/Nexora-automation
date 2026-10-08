@@ -30,4 +30,36 @@ public class CatalogTest extends BaseTest {
         catalogPage.editVariantWeight("Topside-41A", "1600");
         catalogPage.clickSaveCatalog();
     }
+
+    @Test
+    public void editCatalogVariantWeight() {
+
+        login();
+
+        CatalogPage catalogPage = dashboardPage.goToCatalogPage();
+
+        // Open catalog
+        catalogPage.clickEdit("Fair Exports India Private Limited");
+
+        // Go to Product Details / Variants
+        catalogPage.clickNext();
+
+        // Change weight
+        catalogPage.editVariantWeight("Topside-41A", "1500");
+
+        // Save
+        catalogPage.clickSaveCatalog();
+
+        // After save, application goes to /orders
+        CatalogPage catalogPageAfterSave = dashboardPage.goToCatalogPage();
+
+        // Reopen the same catalog
+        catalogPageAfterSave.clickEdit("Fair Exports India Private Limited");
+
+        // Go to variants
+        catalogPageAfterSave.clickNext();
+
+        // Verify saved weight
+        catalogPageAfterSave.verifyVariantWeight("Topside-41A", "1500");
+    }
 }

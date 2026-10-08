@@ -99,4 +99,34 @@ public class CatalogPage {
 
         saveCatalogButton.click();
     }
+
+
+    public void verifyVariantWeight(String variantName, String expectedWeight) {
+
+        Locator variantRow = page.locator(
+                "div.grid.grid-cols-\\[24px_1fr_1fr_1fr_1fr_60px_150px_110px_32px\\]"
+        ).filter(
+                new Locator.FilterOptions().setHas(
+                        page.locator("input[value='" + variantName + "']")
+                )
+        ).first();
+
+        assertThat(variantRow).isVisible();
+
+        Locator weightInput = variantRow.locator(
+                "input[placeholder='e.g. 500g']"
+        );
+
+        assertThat(weightInput).isVisible();
+
+        String actualWeight = weightInput.inputValue();
+
+        assertThat(weightInput).hasValue(expectedWeight);
+
+        System.out.println(
+                "Weight verification successful for " + variantName +
+                        ": Expected = " + expectedWeight +
+                        ", Actual = " + actualWeight
+        );
+    }
 }

@@ -77,15 +77,26 @@
         }
         public CatalogPage goToCatalogPage() {
 
-            Locator catalogMenu = page.getByText(
-                    "Catalogs",
-                    new Page.GetByTextOptions().setExact(true)
-            );
+            Locator catalogsLink = page.getByRole(
+                    AriaRole.LINK,
+                    new Page.GetByRoleOptions().setName("Catalogs")
+            ).first();
+            assertThat(catalogsLink).isVisible();
+            assertThat(catalogsLink).isEnabled();
 
-            assertThat(catalogMenu).isVisible();
 
-            catalogMenu.click();
+            catalogsLink.click();
 
             return new CatalogPage(page);
+        }
+
+        public OrderPage goToOrderPage() {
+
+            page.getByText(
+                    "Orders",
+                    new Page.GetByTextOptions().setExact(true)
+            ).click();
+
+            return new OrderPage(page);
         }
     }

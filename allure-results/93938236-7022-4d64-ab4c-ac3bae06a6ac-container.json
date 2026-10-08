@@ -1,0 +1,1 @@
+{"uuid":"93938236-7022-4d64-ab4c-ac3bae06a6ac","name":"com.nexora.tests.BaseTest.setUp","children":["d7d698e0-7ddb-49b5-bc61-7de88ee596e7"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1791352400640,"stop":1791352412910}],"afters":[],"start":1791352400639,"stop":1791352412912}
