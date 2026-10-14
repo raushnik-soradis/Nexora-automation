@@ -99,4 +99,20 @@
 
             return new OrderPage(page);
         }
+        public StaffPage goToStaffPage() {
+
+            Locator staffMenu = page.getByText(
+                    "Staff",
+                    new Page.GetByTextOptions().setExact(true)
+            );
+
+            assertThat(staffMenu).isVisible();
+            assertThat(staffMenu).isEnabled();
+
+            staffMenu.click();
+
+            System.out.println("Clicked on Staff.");
+
+            return new StaffPage(page);
+        }
     }
