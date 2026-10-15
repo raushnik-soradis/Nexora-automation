@@ -20,7 +20,7 @@ public class DriverFactory {
 
             browser = playwright.chromium().launch(
                     new BrowserType.LaunchOptions()
-                            .setHeadless(false)
+                            .setHeadless(true)
             );
 
         } else {
