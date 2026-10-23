@@ -25,7 +25,13 @@ jobs:
           distribution: temurin
           java-version: '21'
           cache: maven
-
+ # ADD THIS NEW STEP HERE
+      - name: Verify browser configuration
+        run: |
+          echo "GitHub commit:"
+          git rev-parse --short HEAD
+          echo "Browser launch configuration:"
+          grep -R -n -E 'chromium\(\)\.launch|setHeadless' src || true
       - name: Run TestNG regression suite
         run: mvn clean test -Dsurefire.suiteXmlFiles=testng-regression.xml
 
