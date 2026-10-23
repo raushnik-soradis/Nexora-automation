@@ -20,7 +20,7 @@ public class DriverFactory {
 
             browser = playwright.chromium().launch(
                     new BrowserType.LaunchOptions()
-                            .setHeadless(true)
+                            .setHeadless(false)
             );
 
         } else {
@@ -31,7 +31,8 @@ public class DriverFactory {
 
         page = browser.newPage();
 
-        page.setDefaultTimeout(8000);
+        page.setDefaultTimeout(10000);
+        page.setDefaultNavigationTimeout(30000);
     }
 
     public static Page getPage() {
